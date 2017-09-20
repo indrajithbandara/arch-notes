@@ -1,0 +1,15 @@
+* Add user
+useradd -m -G wheel -s /bin/bash ryan
+passwd ryan
+* Dual boot w/ windows:
+** Win+R msinfo32 -> BIOS Mode value
+*** UEFI / Legacy=>BIOS-MBR mode
+* Connect to WiFI
+ip link set wlp12s0 up && wpa_supplicant -B -I wlp12s0 -c <(wpa_passphrase ID PASS) && dhcpcd -I wlp12s0
+* User-level modify /usr/local/bin
+** sudo chown ryan:ryan /usr/local/bin
+* Git clone arch-notes repo
+* bash user-space.sh
+** Installs default set of required packages for a productive arch-install...
+* TODO arch-notes -> nix-notes
+** Purpose of this repo is to have a quick and easily hackable proprietary system
